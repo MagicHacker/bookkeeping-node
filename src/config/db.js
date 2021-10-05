@@ -1,7 +1,6 @@
 /**
  * 数据库配置
  */
-
 module.exports = {
     database: 'bookkeeping',
     host: 'localhost',
