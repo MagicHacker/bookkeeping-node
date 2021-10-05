@@ -1,14 +1,8 @@
 /**
  * 测试文件
  */
-const dbConfig = require('./config/db')
-// 测试数据库连接
-const { Sequelize } = require('sequelize')
 
-const sequelize = new Sequelize(dbConfig.database, dbConfig.username, dbConfig.password, {
-    host: 'localhost',
-    dialect: 'mysql'
-})
+const  { sequelize }= require('./utils/sequelize')
 
 try {
     sequelize.authenticate()
