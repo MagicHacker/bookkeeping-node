@@ -2,7 +2,7 @@
  * 测试文件
  */
 
-const  { sequelize }= require('./utils/sequelize')
+const  { sequelize }= require('./utils')
 
 try {
     sequelize.authenticate()
