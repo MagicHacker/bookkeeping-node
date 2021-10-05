@@ -9,6 +9,8 @@ const app = express()
 // 解析请求体
 app.use(express.json())
 app.use(express.urlencoded())
+// 托管静态资源
+app.use(express.static('./public'))
 // 挂载路由
 app.use(router)
 
