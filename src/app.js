@@ -3,8 +3,11 @@
  */
 const express = require('express')
 const config = require('./config')
-
+const router = require('./router')
 const app = express()
+
+// 挂载路由
+app.use(router)
 
 app.get('/', (req, res) => {
     res.send('Hello World!')
