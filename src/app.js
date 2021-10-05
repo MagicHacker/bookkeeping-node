@@ -6,6 +6,9 @@ const config = require('./config')
 const router = require('./router')
 const app = express()
 
+// 解析请求体
+app.use(express.json())
+app.use(express.urlencoded())
 // 挂载路由
 app.use(router)
 
