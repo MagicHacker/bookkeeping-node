@@ -3,7 +3,7 @@
  */
 const express = require('express');
 const config = require('./config');
-const router = require('./router');
+const routers = require('./routers');
 const morgan = require('morgan');
 const app = express();
 
@@ -16,8 +16,9 @@ app.use(morgan('short'));
 // 托管静态资源
 app.use(express.static('./public'));
 // 挂载路由
-app.use(router);
-
+routers.forEach(router => {
+	app.use(router);
+});
 // 监听
 app.listen(3000, () => {
 	console.log(`App listening at http://localhost:${port}`);
