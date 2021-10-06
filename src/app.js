@@ -17,9 +17,9 @@ app.use(morgan('short'));
 app.use(express.static('./public'));
 // 挂载路由
 routers.forEach(router => {
-	app.use(router);
+	app.use('/api', router);
 });
 // 监听
-app.listen(3000, () => {
+app.listen(port, () => {
 	console.log(`App listening at http://localhost:${port}`);
 });
