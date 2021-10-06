@@ -17,9 +17,7 @@ app.use(express.static('./public'))
 // 挂载路由
 app.use(router)
 
-app.get('/', (req, res) => {
-    res.send('Hello World!')
-})
+// 监听
 app.listen(3000, () => {
-    console.log(`Example app listening at http://localhost:${config.port}`)
+    console.log(`App listening at http://localhost:${config.port}`)
 })
