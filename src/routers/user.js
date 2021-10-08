@@ -4,6 +4,7 @@
 
 const express = require('express');
 const router = express.Router();
+const { userRegister, userLogin } = require('../controller/user');
 
 // 用户注册
 router.post('/register', (req, res) => {
@@ -11,6 +12,7 @@ router.post('/register', (req, res) => {
 		body: { username, password },
 	} = req;
 	// 注册逻辑
+	userRegister(username, password);
 	res.status(200).send({
 		code: 0,
 	});
@@ -22,6 +24,7 @@ router.post('/login', (req, res) => {
 		body: { username, password },
 	} = req;
 	// 登录逻辑
+	userLogin(username, password);
 	res.status(200).send({
 		code: 0,
 	});
