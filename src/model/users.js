@@ -11,18 +11,22 @@ const User = sequelize.define(
 		username: {
 			type: DataTypes.STRING,
 			allowNull: false,
+			comment: '用户名',
 		},
 		password: {
 			type: DataTypes.STRING,
 			allowNull: false,
+			comment: '密码',
 		},
 		signature: {
 			type: DataTypes.STRING,
 			allowNull: true,
+			comment: '个性签名',
 		},
 		avatar: {
 			type: DataTypes.STRING,
 			allowNull: true,
+			comment: '头像',
 		},
 	},
 	{
