@@ -28,6 +28,14 @@ const User = sequelize.define(
 			allowNull: true,
 			comment: '头像',
 		},
+		createdAt: {
+			type: DataTypes.TIME,
+			field: 'ctime',
+		},
+		updatedAt: {
+			type: DataTypes.TIME,
+			field: 'uptime',
+		},
 	},
 	{
 		freezeTableName: true, // 强制表名称=模型名称，防止sequelize自动复数化表名
