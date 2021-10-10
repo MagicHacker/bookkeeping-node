@@ -1,6 +1,7 @@
 /**
  * 用户相关逻辑
  */
+const { Op } = require('sequelize');
 const { User } = require('../model/users');
 // 用户注册controller
 const userRegister = async (username, password) => {
@@ -16,7 +17,25 @@ const userRegister = async (username, password) => {
 };
 
 // 用户登录controller
-const userLogin = (username, password) => {};
+const userLogin = async (username, password) => {
+	try {
+		const user = User.findOne({
+			where: {
+				[Op.and]: [
+					{
+						username,
+					},
+					{
+						password,
+					},
+				],
+			},
+		});
+		return user;
+	} catch (error) {
+		console.error('error msg:', error);
+	}
+};
 
 module.exports = {
 	userRegister,

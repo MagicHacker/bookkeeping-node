@@ -12,7 +12,7 @@ router.post('/register', (req, res) => {
 		body: { username, password },
 	} = req;
 	// 参数判空处理
-	if (!username && !password) {
+	if (username && password) {
 		// 先查询数据是否已存在
 		// 注册逻辑
 		const user = userRegister(username, password);
@@ -31,9 +31,17 @@ router.post('/login', (req, res) => {
 	const {
 		body: { username, password },
 	} = req;
-	// 登录逻辑
-	userLogin(username, password);
-	res.status(200).send(success);
+	// 判空处理
+	if (username && password) {
+		const user = userLogin(username, password);
+		if (user) {
+			res.status(200).send(success);
+		} else {
+			res.status(500).send(error);
+		}
+	} else {
+		res.status(400).send(bad_request);
+	}
 });
 
 module.exports = router;
