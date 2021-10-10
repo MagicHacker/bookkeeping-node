@@ -4,7 +4,7 @@
 const { DataTypes } = require('sequelize');
 const { sequelize } = require('../utils/sequelize');
 
-const bill = sequelize.define('bill', {
+const Bill = sequelize.define('bill', {
 	pay_type: {
 		type: DataTypes.INTEGER,
 		allowNull: false,
@@ -41,5 +41,5 @@ const bill = sequelize.define('bill', {
 	},
 });
 module.exports = {
-	bill,
+	Bill,
 };
