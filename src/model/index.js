@@ -2,12 +2,12 @@
  * model模型统一管理
  */
 
-const { users } = require('./users');
-const { bills } = require('./bills');
-const { types } = require('./types');
+const { Users } = require('./users');
+const { Bills } = require('./bills');
+const { Types } = require('./types');
 
 module.exports = {
-	users,
-	bills,
-	types,
+	Users,
+	Bills,
+	Types,
 };

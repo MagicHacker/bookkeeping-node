@@ -4,7 +4,7 @@
 const { DataTypes } = require('sequelize');
 const { sequelize } = require('../utils/sequelize');
 
-const User = sequelize.define(
+const Users = sequelize.define(
 	'user',
 	{
 		// 模型属性对应表的字段
@@ -43,5 +43,5 @@ const User = sequelize.define(
 );
 
 module.exports = {
-	User,
+	Users,
 };

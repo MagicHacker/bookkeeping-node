@@ -5,7 +5,7 @@
 module.exports = {
 	success: {
 		code: 0,
-		msg: '',
+		msg: 'success',
 		status: 200,
 	},
 	error: {
