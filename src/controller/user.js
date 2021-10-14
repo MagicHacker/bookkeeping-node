@@ -30,6 +30,7 @@ const userLogin = async (username, password) => {
 					},
 				],
 			},
+			raw: true,
 		});
 		return user;
 	} catch (error) {
@@ -43,6 +44,7 @@ const userQuery = async username => {
 			where: {
 				username,
 			},
+			raw: true,
 		});
 		return user;
 	} catch (error) {
